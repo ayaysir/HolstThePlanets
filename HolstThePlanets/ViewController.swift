@@ -14,6 +14,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var viewIconList: UIView!
     
     @IBOutlet weak var imageViewBackground: UIImageView!
+    private var originalBackground: UIImage!
+    private var filteredBackground: UIImage!
     
     @IBOutlet weak var btnMars: UIButton!
     @IBOutlet weak var btnVenus: UIButton!
@@ -49,6 +51,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // self.view.backgroundColor = UIColor(patternImage: UIImage(named: "astronomy")!)
+        
         viewModel = CustomMusicSliderViewModel { [unowned self] value in
             if let player = musicManager.player, player.isPlaying {
                 print(value)
@@ -92,6 +95,8 @@ class ViewController: UIViewController {
         
         lblDescription.backgroundColor = .init(red: 0, green: 0, blue: 0, alpha: 0.5)
         changePlanet(to: .Mars)
+        originalBackground = imageViewBackground.image
+        filteredBackground = originalBackground.maskWithColor(color: planetThemeColor(of: .Mars))
         
         Timer.scheduledTimer(withTimeInterval: 0.5, repeats: true) { [unowned self] timer in
             if let player = musicManager.player {
@@ -131,6 +136,8 @@ class ViewController: UIViewController {
     
     @IBAction func segActCategoryChange(_ sender: UISegmentedControl) {
         updateDescription()
+        filteredBackground = filteredBackground.filter(name: "CIColorInvert")
+        // imageViewBackground.image = filteredBackground
     }
     
     
@@ -141,6 +148,13 @@ class ViewController: UIViewController {
         btnPlay.setImage(UIImage(systemName: musicManager.isPlaying ? "pause.fill" : "play.fill"), for: .normal)
         lblMusicTitle.text = musicManager.currentPlanet.playerTitle
         updateDescription()
+        if let image = originalBackground {
+            filteredBackground = image.maskWithColor(color: planetThemeColor(of: planet))
+            // imageViewBackground.image = originalBackground
+            UIView.transition(with: imageViewBackground, duration: 0.5, options: .transitionCrossDissolve) {
+                self.imageViewBackground.image = self.originalBackground
+            } completion: { _ in }
+        }
     }
 
     func updateDescription() {
@@ -157,11 +171,40 @@ class ViewController: UIViewController {
         
         if player.isPlaying {
             player.stop()
+            // imageViewBackground.image = originalBackground
+            UIView.transition(with: imageViewBackground, duration: 0.5, options: .transitionCrossDissolve) {
+                self.imageViewBackground.image = self.originalBackground
+            } completion: { _ in }
         } else {
             player.play()
+            // imageViewBackground.image = filteredBackground
+            UIView.transition(with: imageViewBackground, duration: 1, options: .transitionCrossDissolve) {
+                self.imageViewBackground.image = self.filteredBackground
+            } completion: { _ in }
         }
         
         btnPlay.setImage(UIImage(systemName: player.isPlaying ? "pause.fill" : "play.fill"), for: .normal)
+    }
+    
+    
+    
+    func planetThemeColor(of planet: PlanetName) -> UIColor {
+        switch planet {
+        case .Mars:
+            return .red
+        case .Venus:
+            return .orange
+        case .Mercury:
+            return .lightGray
+        case .Jupiter:
+            return .yellow
+        case .Saturn:
+            return .brown
+        case .Uranus:
+            return UIColor(red: 7/255, green: 145/255, blue: 250/255, alpha: 1)
+        case .Neptune:
+            return UIColor(red: 76/255, green: 205/255, blue: 245/255, alpha: 1)
+        }
     }
     
 }

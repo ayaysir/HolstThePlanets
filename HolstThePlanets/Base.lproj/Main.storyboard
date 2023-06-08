@@ -172,7 +172,7 @@
                                     <action selector="btnActPlay:" destination="BYZ-38-t0r" eventType="touchUpInside" id="TCy-uH-1ay"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="  &quot;화성&quot; 악장은 로마 신화에서 전쟁과 싸움의 신으로 알려진 &quot;마르스&quot;에 해당합니다. &quot;화성&quot;은 전쟁, 강함, 투지, 군사적인 요소를 상징합니다." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LEI-DW-0tT">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="  &quot;화성&quot; 악장은 로마 신화에서 전쟁과 싸움의 신으로 알려진 &quot;마르스&quot;에 해당합니다. &quot;화성&quot;은 전쟁, 강함, 투지, 군사적인 요소를 상징합니다." textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LEI-DW-0tT">
                                 <rect key="frame" x="185.5" y="662" width="766" height="62.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                 <nil key="textColor"/>
