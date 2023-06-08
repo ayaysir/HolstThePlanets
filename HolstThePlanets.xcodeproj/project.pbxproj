@@ -7,15 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4419D4622A31D6A5008025E0 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4419D4612A31D6A5008025E0 /* UIView+Extension.swift */; };
 		443AE6BC2A31A13800F1B529 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 443AE6BB2A31A13800F1B529 /* AppDelegate.swift */; };
 		443AE6BE2A31A13800F1B529 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 443AE6BD2A31A13800F1B529 /* SceneDelegate.swift */; };
 		443AE6C02A31A13800F1B529 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 443AE6BF2A31A13800F1B529 /* ViewController.swift */; };
 		443AE6C32A31A13800F1B529 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 443AE6C12A31A13800F1B529 /* Main.storyboard */; };
 		443AE6C52A31A13A00F1B529 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 443AE6C42A31A13A00F1B529 /* Assets.xcassets */; };
 		443AE6C82A31A13A00F1B529 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 443AE6C62A31A13A00F1B529 /* LaunchScreen.storyboard */; };
+		443AE6D02A31AB1100F1B529 /* CustomMusicSliderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 443AE6CF2A31AB1100F1B529 /* CustomMusicSliderView.swift */; };
+		443AE6D42A31ADD800F1B529 /* MusicProgressSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 443AE6D32A31ADD800F1B529 /* MusicProgressSlider.swift */; };
+		443AE6D62A31AE5B00F1B529 /* Double+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 443AE6D52A31AE5B00F1B529 /* Double+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4419D4612A31D6A5008025E0 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		443AE6B82A31A13800F1B529 /* HolstThePlanets.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HolstThePlanets.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		443AE6BB2A31A13800F1B529 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		443AE6BD2A31A13800F1B529 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -24,6 +29,9 @@
 		443AE6C42A31A13A00F1B529 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		443AE6C72A31A13A00F1B529 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		443AE6C92A31A13A00F1B529 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		443AE6CF2A31AB1100F1B529 /* CustomMusicSliderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomMusicSliderView.swift; sourceTree = "<group>"; };
+		443AE6D32A31ADD800F1B529 /* MusicProgressSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicProgressSlider.swift; sourceTree = "<group>"; };
+		443AE6D52A31AE5B00F1B529 /* Double+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,6 +45,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4419D4602A31D696008025E0 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				443AE6D52A31AE5B00F1B529 /* Double+Extension.swift */,
+				4419D4612A31D6A5008025E0 /* UIView+Extension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 		443AE6AF2A31A13800F1B529 = {
 			isa = PBXGroup;
 			children = (
@@ -56,6 +73,8 @@
 		443AE6BA2A31A13800F1B529 /* HolstThePlanets */ = {
 			isa = PBXGroup;
 			children = (
+				4419D4602A31D696008025E0 /* Extension */,
+				443AE6D12A31ACFC00F1B529 /* CustomView */,
 				443AE6BB2A31A13800F1B529 /* AppDelegate.swift */,
 				443AE6BD2A31A13800F1B529 /* SceneDelegate.swift */,
 				443AE6BF2A31A13800F1B529 /* ViewController.swift */,
@@ -65,6 +84,15 @@
 				443AE6C92A31A13A00F1B529 /* Info.plist */,
 			);
 			path = HolstThePlanets;
+			sourceTree = "<group>";
+		};
+		443AE6D12A31ACFC00F1B529 /* CustomView */ = {
+			isa = PBXGroup;
+			children = (
+				443AE6CF2A31AB1100F1B529 /* CustomMusicSliderView.swift */,
+				443AE6D32A31ADD800F1B529 /* MusicProgressSlider.swift */,
+			);
+			path = CustomView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,7 +166,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				443AE6D42A31ADD800F1B529 /* MusicProgressSlider.swift in Sources */,
+				4419D4622A31D6A5008025E0 /* UIView+Extension.swift in Sources */,
 				443AE6C02A31A13800F1B529 /* ViewController.swift in Sources */,
+				443AE6D62A31AE5B00F1B529 /* Double+Extension.swift in Sources */,
+				443AE6D02A31AB1100F1B529 /* CustomMusicSliderView.swift in Sources */,
 				443AE6BC2A31A13800F1B529 /* AppDelegate.swift in Sources */,
 				443AE6BE2A31A13800F1B529 /* SceneDelegate.swift in Sources */,
 			);
@@ -295,6 +327,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -323,6 +356,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
