@@ -15,11 +15,36 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var imageViewBackground: UIImageView!
     
-    var viewModel = CustomMusicSliderViewModel()
+    @IBOutlet weak var btnMars: UIButton!
+    @IBOutlet weak var btnVenus: UIButton!
+    @IBOutlet weak var btnMercury: UIButton!
+    @IBOutlet weak var btnJupiter: UIButton!
+    @IBOutlet weak var btnUranus: UIButton!
+    @IBOutlet weak var btnNeptune: UIButton!
+    @IBOutlet weak var btnPlay: UIButton!
+    
+    var iconButtons: [UIButton] {
+        return [
+            btnMars,
+            btnVenus,
+            btnMercury,
+            btnJupiter,
+            btnUranus,
+            btnNeptune,
+        ]
+    }
+    
+    /// UIHosting 조정용
+    var viewModel: CustomMusicSliderViewModel!
+    
+    var musicManager = MusicPlayManager(to: .Mars)
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // self.view.backgroundColor = UIColor(patternImage: UIImage(named: "astronomy")!)
+        viewModel = CustomMusicSliderViewModel { [unowned self] value in
+            musicManager.player?.currentTime = value
+        }
         
         let sliderVC = UIHostingController(rootView: CustomMusicSliderView(viewModel: self.viewModel))
         let embedSliderView = sliderVC.view!
@@ -45,9 +70,39 @@ class ViewController: UIViewController {
         
         imageViewBackground.rotate(duration: 60)
         
-        Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) { _ in
-            self.viewModel.value += 0.1
+        iconButtons.forEach { button in
+            button.layer.shadowColor = UIColor.black.cgColor
+            button.layer.shadowOpacity = 1.0
+            button.layer.shadowOffset = .zero
+            button.layer.shadowRadius = 6
+        }
+        
+        //
+        // musicManager.player?.play()
+        
+        
+        Timer.scheduledTimer(withTimeInterval: 0.5, repeats: true) { [unowned self] timer in
+            if let player = musicManager.player {
+                // print(player.currentTime, player.duration)
+                viewModel.inRange = 0 ... player.duration
+                viewModel.value = player.currentTime
+            }
         }
     }
+    
+    @IBAction func btnActPlay(_ sender: UIButton) {
+        guard let player = musicManager.player else {
+            return
+        }
+        
+        if player.isPlaying {
+            player.stop()
+        } else {
+            player.play()
+        }
+        
+        btnPlay.setImage(UIImage(systemName: player.isPlaying ? "pause.fill" : "play.fill"), for: .normal)
+    }
+    
 }
 

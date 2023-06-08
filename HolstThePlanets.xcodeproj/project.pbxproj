@@ -8,6 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		4419D4622A31D6A5008025E0 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4419D4612A31D6A5008025E0 /* UIView+Extension.swift */; };
+		443026762A31E59C00AE1B09 /* Mars.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4430266F2A31E59C00AE1B09 /* Mars.mp3 */; };
+		443026772A31E59C00AE1B09 /* Jupiter.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 443026702A31E59C00AE1B09 /* Jupiter.mp3 */; };
+		443026782A31E59C00AE1B09 /* Saturn.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 443026712A31E59C00AE1B09 /* Saturn.mp3 */; };
+		443026792A31E59C00AE1B09 /* Neptune.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 443026722A31E59C00AE1B09 /* Neptune.mp3 */; };
+		4430267A2A31E59C00AE1B09 /* Uranus.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 443026732A31E59C00AE1B09 /* Uranus.mp3 */; };
+		4430267B2A31E59C00AE1B09 /* Mercury.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 443026742A31E59C00AE1B09 /* Mercury.mp3 */; };
+		4430267C2A31E59C00AE1B09 /* Venus.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 443026752A31E59C00AE1B09 /* Venus.mp3 */; };
+		4430267E2A31E64000AE1B09 /* MusicPlayManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4430267D2A31E64000AE1B09 /* MusicPlayManager.swift */; };
 		443AE6BC2A31A13800F1B529 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 443AE6BB2A31A13800F1B529 /* AppDelegate.swift */; };
 		443AE6BE2A31A13800F1B529 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 443AE6BD2A31A13800F1B529 /* SceneDelegate.swift */; };
 		443AE6C02A31A13800F1B529 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 443AE6BF2A31A13800F1B529 /* ViewController.swift */; };
@@ -21,6 +29,14 @@
 
 /* Begin PBXFileReference section */
 		4419D4612A31D6A5008025E0 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		4430266F2A31E59C00AE1B09 /* Mars.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Mars.mp3; path = ../../../../../Downloads/Mars.mp3; sourceTree = "<group>"; };
+		443026702A31E59C00AE1B09 /* Jupiter.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Jupiter.mp3; path = ../../../../../Downloads/Jupiter.mp3; sourceTree = "<group>"; };
+		443026712A31E59C00AE1B09 /* Saturn.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Saturn.mp3; path = ../../../../../Downloads/Saturn.mp3; sourceTree = "<group>"; };
+		443026722A31E59C00AE1B09 /* Neptune.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Neptune.mp3; path = ../../../../../Downloads/Neptune.mp3; sourceTree = "<group>"; };
+		443026732A31E59C00AE1B09 /* Uranus.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Uranus.mp3; path = ../../../../../Downloads/Uranus.mp3; sourceTree = "<group>"; };
+		443026742A31E59C00AE1B09 /* Mercury.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Mercury.mp3; path = ../../../../../Downloads/Mercury.mp3; sourceTree = "<group>"; };
+		443026752A31E59C00AE1B09 /* Venus.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Venus.mp3; path = ../../../../../Downloads/Venus.mp3; sourceTree = "<group>"; };
+		4430267D2A31E64000AE1B09 /* MusicPlayManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicPlayManager.swift; sourceTree = "<group>"; };
 		443AE6B82A31A13800F1B529 /* HolstThePlanets.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HolstThePlanets.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		443AE6BB2A31A13800F1B529 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		443AE6BD2A31A13800F1B529 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -54,6 +70,20 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
+		4430266E2A31E58900AE1B09 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				443026722A31E59C00AE1B09 /* Neptune.mp3 */,
+				4430266F2A31E59C00AE1B09 /* Mars.mp3 */,
+				443026752A31E59C00AE1B09 /* Venus.mp3 */,
+				443026742A31E59C00AE1B09 /* Mercury.mp3 */,
+				443026702A31E59C00AE1B09 /* Jupiter.mp3 */,
+				443026712A31E59C00AE1B09 /* Saturn.mp3 */,
+				443026732A31E59C00AE1B09 /* Uranus.mp3 */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		443AE6AF2A31A13800F1B529 = {
 			isa = PBXGroup;
 			children = (
@@ -73,11 +103,13 @@
 		443AE6BA2A31A13800F1B529 /* HolstThePlanets */ = {
 			isa = PBXGroup;
 			children = (
+				4430266E2A31E58900AE1B09 /* Resources */,
 				4419D4602A31D696008025E0 /* Extension */,
 				443AE6D12A31ACFC00F1B529 /* CustomView */,
 				443AE6BB2A31A13800F1B529 /* AppDelegate.swift */,
 				443AE6BD2A31A13800F1B529 /* SceneDelegate.swift */,
 				443AE6BF2A31A13800F1B529 /* ViewController.swift */,
+				4430267D2A31E64000AE1B09 /* MusicPlayManager.swift */,
 				443AE6C12A31A13800F1B529 /* Main.storyboard */,
 				443AE6C42A31A13A00F1B529 /* Assets.xcassets */,
 				443AE6C62A31A13A00F1B529 /* LaunchScreen.storyboard */,
@@ -153,9 +185,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4430267B2A31E59C00AE1B09 /* Mercury.mp3 in Resources */,
 				443AE6C82A31A13A00F1B529 /* LaunchScreen.storyboard in Resources */,
+				443026772A31E59C00AE1B09 /* Jupiter.mp3 in Resources */,
 				443AE6C52A31A13A00F1B529 /* Assets.xcassets in Resources */,
 				443AE6C32A31A13800F1B529 /* Main.storyboard in Resources */,
+				4430267A2A31E59C00AE1B09 /* Uranus.mp3 in Resources */,
+				443026762A31E59C00AE1B09 /* Mars.mp3 in Resources */,
+				443026782A31E59C00AE1B09 /* Saturn.mp3 in Resources */,
+				443026792A31E59C00AE1B09 /* Neptune.mp3 in Resources */,
+				4430267C2A31E59C00AE1B09 /* Venus.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -169,6 +208,7 @@
 				443AE6D42A31ADD800F1B529 /* MusicProgressSlider.swift in Sources */,
 				4419D4622A31D6A5008025E0 /* UIView+Extension.swift in Sources */,
 				443AE6C02A31A13800F1B529 /* ViewController.swift in Sources */,
+				4430267E2A31E64000AE1B09 /* MusicPlayManager.swift in Sources */,
 				443AE6D62A31AE5B00F1B529 /* Double+Extension.swift in Sources */,
 				443AE6D02A31AB1100F1B529 /* CustomMusicSliderView.swift in Sources */,
 				443AE6BC2A31A13800F1B529 /* AppDelegate.swift in Sources */,

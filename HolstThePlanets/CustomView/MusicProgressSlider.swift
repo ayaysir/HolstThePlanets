@@ -20,7 +20,7 @@ struct MusicProgressSlider<T: BinaryFloatingPoint>: View {
     let fillColor: Color
     let emptyColor: Color
     let height: CGFloat
-    let onEditingChanged: (Bool) -> Void
+    let onEditingChanged: (Bool, T) -> Void
     
     // private variables
     @State private var localRealProgress: T = 0
@@ -35,7 +35,7 @@ struct MusicProgressSlider<T: BinaryFloatingPoint>: View {
         fillColor: Color,
         emptyColor: Color,
         height: CGFloat,
-        onEditingChanged: @escaping (Bool) -> Void
+        onEditingChanged: @escaping (Bool, T) -> Void
     ) {
         self._value = value
         self.inRange = inRange
@@ -94,7 +94,7 @@ struct MusicProgressSlider<T: BinaryFloatingPoint>: View {
                 })
             .onChange(of: isActive) { newValue in
                 value = max(min(getPrgValue(), inRange.upperBound), inRange.lowerBound)
-                onEditingChanged(newValue)
+                onEditingChanged(newValue, value)
             }
             .onAppear {
                 localRealProgress = getPrgPercentage(value)
