@@ -23,6 +23,13 @@ class ViewController: UIViewController {
     @IBOutlet weak var btnNeptune: UIButton!
     @IBOutlet weak var btnPlay: UIButton!
     
+    @IBOutlet weak var lblMusicTitle: UILabel!
+    @IBOutlet weak var lblDescription: UILabel!
+    @IBOutlet weak var lblPlanetTitle: UILabel!
+    @IBOutlet weak var lblPlanetSubtitle: UILabel!
+    
+    @IBOutlet weak var segCategory: UISegmentedControl!
+    
     var iconButtons: [UIButton] {
         return [
             btnMars,
@@ -43,7 +50,10 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // self.view.backgroundColor = UIColor(patternImage: UIImage(named: "astronomy")!)
         viewModel = CustomMusicSliderViewModel { [unowned self] value in
-            musicManager.player?.currentTime = value
+            if let player = musicManager.player, player.isPlaying {
+                print(value)
+                player.currentTime = value
+            }
         }
         
         let sliderVC = UIHostingController(rootView: CustomMusicSliderView(viewModel: self.viewModel))
@@ -80,6 +90,8 @@ class ViewController: UIViewController {
         //
         // musicManager.player?.play()
         
+        lblDescription.backgroundColor = .init(red: 0, green: 0, blue: 0, alpha: 0.5)
+        changePlanet(to: .Mars)
         
         Timer.scheduledTimer(withTimeInterval: 0.5, repeats: true) { [unowned self] timer in
             if let player = musicManager.player {
@@ -90,7 +102,55 @@ class ViewController: UIViewController {
         }
     }
     
+    // MARK: - IBActions
+    
+    @IBAction func btnActSelectPlanet(_ sender: UIButton) {
+        switch sender.tag {
+        case 1:
+            changePlanet(to: .Mars)
+        case 2:
+            changePlanet(to: .Venus)
+        case 3:
+            changePlanet(to: .Mercury)
+        case 4:
+            changePlanet(to: .Jupiter)
+        case 5:
+            changePlanet(to: .Saturn)
+        case 6:
+            changePlanet(to: .Uranus)
+        case 7:
+            changePlanet(to: .Neptune)
+        default:
+            break
+        }
+    }
+    
     @IBAction func btnActPlay(_ sender: UIButton) {
+        togglePlayStatus()
+    }
+    
+    @IBAction func segActCategoryChange(_ sender: UISegmentedControl) {
+        updateDescription()
+    }
+    
+    
+    // MARK: - IBAction Helper
+    
+    func changePlanet(to planet: PlanetName) {
+        musicManager.change(to: planet)
+        btnPlay.setImage(UIImage(systemName: musicManager.isPlaying ? "pause.fill" : "play.fill"), for: .normal)
+        lblMusicTitle.text = musicManager.currentPlanet.playerTitle
+        updateDescription()
+    }
+
+    func updateDescription() {
+        lblDescription.text = segCategory.selectedSegmentIndex == 0 ? musicManager.currentPlanet.astronomyDescription : musicManager.currentPlanet.astrologyDescription
+        lblPlanetTitle.text = musicManager.currentPlanet.titleKorean
+        lblPlanetSubtitle.text = musicManager.currentPlanet.subtitleKorean
+    }
+    
+    
+    func togglePlayStatus() {
         guard let player = musicManager.player else {
             return
         }

@@ -16,6 +16,8 @@
 		4430267B2A31E59C00AE1B09 /* Mercury.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 443026742A31E59C00AE1B09 /* Mercury.mp3 */; };
 		4430267C2A31E59C00AE1B09 /* Venus.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 443026752A31E59C00AE1B09 /* Venus.mp3 */; };
 		4430267E2A31E64000AE1B09 /* MusicPlayManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4430267D2A31E64000AE1B09 /* MusicPlayManager.swift */; };
+		443026802A31F53D00AE1B09 /* PlanetName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4430267F2A31F53D00AE1B09 /* PlanetName.swift */; };
+		44351E022A3220CF009C0475 /* UIImageView+Filter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44351E012A3220CF009C0475 /* UIImageView+Filter.swift */; };
 		443AE6BC2A31A13800F1B529 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 443AE6BB2A31A13800F1B529 /* AppDelegate.swift */; };
 		443AE6BE2A31A13800F1B529 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 443AE6BD2A31A13800F1B529 /* SceneDelegate.swift */; };
 		443AE6C02A31A13800F1B529 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 443AE6BF2A31A13800F1B529 /* ViewController.swift */; };
@@ -37,6 +39,8 @@
 		443026742A31E59C00AE1B09 /* Mercury.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Mercury.mp3; path = ../../../../../Downloads/Mercury.mp3; sourceTree = "<group>"; };
 		443026752A31E59C00AE1B09 /* Venus.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Venus.mp3; path = ../../../../../Downloads/Venus.mp3; sourceTree = "<group>"; };
 		4430267D2A31E64000AE1B09 /* MusicPlayManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicPlayManager.swift; sourceTree = "<group>"; };
+		4430267F2A31F53D00AE1B09 /* PlanetName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetName.swift; sourceTree = "<group>"; };
+		44351E012A3220CF009C0475 /* UIImageView+Filter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Filter.swift"; sourceTree = "<group>"; };
 		443AE6B82A31A13800F1B529 /* HolstThePlanets.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HolstThePlanets.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		443AE6BB2A31A13800F1B529 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		443AE6BD2A31A13800F1B529 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -66,6 +70,7 @@
 			children = (
 				443AE6D52A31AE5B00F1B529 /* Double+Extension.swift */,
 				4419D4612A31D6A5008025E0 /* UIView+Extension.swift */,
+				44351E012A3220CF009C0475 /* UIImageView+Filter.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -114,6 +119,7 @@
 				443AE6C42A31A13A00F1B529 /* Assets.xcassets */,
 				443AE6C62A31A13A00F1B529 /* LaunchScreen.storyboard */,
 				443AE6C92A31A13A00F1B529 /* Info.plist */,
+				4430267F2A31F53D00AE1B09 /* PlanetName.swift */,
 			);
 			path = HolstThePlanets;
 			sourceTree = "<group>";
@@ -212,6 +218,8 @@
 				443AE6D62A31AE5B00F1B529 /* Double+Extension.swift in Sources */,
 				443AE6D02A31AB1100F1B529 /* CustomMusicSliderView.swift in Sources */,
 				443AE6BC2A31A13800F1B529 /* AppDelegate.swift in Sources */,
+				44351E022A3220CF009C0475 /* UIImageView+Filter.swift in Sources */,
+				443026802A31F53D00AE1B09 /* PlanetName.swift in Sources */,
 				443AE6BE2A31A13800F1B529 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
