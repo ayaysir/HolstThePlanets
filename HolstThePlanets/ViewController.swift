@@ -158,11 +158,13 @@ class ViewController: UIViewController {
     }
 
     func updateDescription() {
-        lblDescription.text = segCategory.selectedSegmentIndex == 0 ? musicManager.currentPlanet.astronomyDescription : musicManager.currentPlanet.astrologyDescription
-        lblPlanetTitle.text = musicManager.currentPlanet.titleKorean
-        lblPlanetSubtitle.text = musicManager.currentPlanet.subtitleKorean
+        // lblDescription.text = segCategory.selectedSegmentIndex == 0 ? musicManager.currentPlanet.astronomyDescription : musicManager.currentPlanet.astrologyDescription
+        labelTransition(lblDescription, changeText: segCategory.selectedSegmentIndex == 0 ? musicManager.currentPlanet.astronomyDescription : musicManager.currentPlanet.astrologyDescription)
+        // lblPlanetTitle.text = musicManager.currentPlanet.titleKorean
+        labelTransition(lblPlanetTitle, changeText: musicManager.currentPlanet.titleKorean)
+        // lblPlanetSubtitle.text = musicManager.currentPlanet.subtitleKorean
+        labelTransition(lblPlanetSubtitle, changeText: musicManager.currentPlanet.subtitleKorean)
     }
-    
     
     func togglePlayStatus() {
         guard let player = musicManager.player else {
@@ -186,8 +188,6 @@ class ViewController: UIViewController {
         btnPlay.setImage(UIImage(systemName: player.isPlaying ? "pause.fill" : "play.fill"), for: .normal)
     }
     
-    
-    
     func planetThemeColor(of planet: PlanetName) -> UIColor {
         switch planet {
         case .Mars:
@@ -207,5 +207,10 @@ class ViewController: UIViewController {
         }
     }
     
+    func labelTransition(_ label: UILabel, changeText: String, duration: TimeInterval = 0.2) {
+        UIView.transition(with: label, duration: duration, options: .transitionCrossDissolve) {
+            label.text = changeText
+        } completion: { _ in }
+    }
 }
 
