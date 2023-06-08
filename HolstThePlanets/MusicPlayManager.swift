@@ -58,6 +58,7 @@ class MusicPlayManager {
         updateCommandCenterInfo(metadata: metadata)
         
         // Scrubber (슬라이더) 활성화
+        // https://stackoverflow.com/questions/34321071/how-can-i-make-the-control-center-slider-editable
         commandCenter.changePlaybackPositionCommand.addTarget { [weak self] event in
             guard let self = self else {
                 return .commandFailed

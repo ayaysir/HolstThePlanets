@@ -53,7 +53,7 @@ class ViewController: UIViewController {
         // self.view.backgroundColor = UIColor(patternImage: UIImage(named: "astronomy")!)
         
         viewModel = CustomMusicSliderViewModel { [unowned self] value in
-            if let player = musicManager.player, player.isPlaying {
+            if let player = musicManager.player {
                 print("slider changed:", value)
                 player.currentTime = value
                 musicManager.updateCommandCenterInfoCurrentTime()
@@ -139,7 +139,9 @@ class ViewController: UIViewController {
         updateDescription()
         // filteredBackground = filteredBackground.filter(name: "CIColorInvert")
         // imageViewBackground.image = filteredBackground
-        togglePlayStatus()
+        
+        // 아이폰 테스트 할때만
+        // togglePlayStatus()
     }
     
     
