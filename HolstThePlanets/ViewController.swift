@@ -54,8 +54,9 @@ class ViewController: UIViewController {
         
         viewModel = CustomMusicSliderViewModel { [unowned self] value in
             if let player = musicManager.player, player.isPlaying {
-                print(value)
+                print("slider changed:", value)
                 player.currentTime = value
+                musicManager.updateCommandCenterInfoCurrentTime()
             }
         }
         
@@ -136,8 +137,9 @@ class ViewController: UIViewController {
     
     @IBAction func segActCategoryChange(_ sender: UISegmentedControl) {
         updateDescription()
-        filteredBackground = filteredBackground.filter(name: "CIColorInvert")
+        // filteredBackground = filteredBackground.filter(name: "CIColorInvert")
         // imageViewBackground.image = filteredBackground
+        togglePlayStatus()
     }
     
     
@@ -160,8 +162,10 @@ class ViewController: UIViewController {
     func updateDescription() {
         // lblDescription.text = segCategory.selectedSegmentIndex == 0 ? musicManager.currentPlanet.astronomyDescription : musicManager.currentPlanet.astrologyDescription
         labelTransition(lblDescription, changeText: segCategory.selectedSegmentIndex == 0 ? musicManager.currentPlanet.astronomyDescription : musicManager.currentPlanet.astrologyDescription)
+        
         // lblPlanetTitle.text = musicManager.currentPlanet.titleKorean
         labelTransition(lblPlanetTitle, changeText: musicManager.currentPlanet.titleKorean)
+        
         // lblPlanetSubtitle.text = musicManager.currentPlanet.subtitleKorean
         labelTransition(lblPlanetSubtitle, changeText: musicManager.currentPlanet.subtitleKorean)
     }
